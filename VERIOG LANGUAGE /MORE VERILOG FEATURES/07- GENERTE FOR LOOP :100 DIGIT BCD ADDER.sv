@@ -18,4 +18,3 @@ module top_module(
     assign cout=carry[99];
 
 endmodule
-
