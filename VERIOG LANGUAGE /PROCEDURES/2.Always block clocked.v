@@ -17,4 +17,4 @@ module top_module(
         out_always_ff <= a^b;
     end
     
-endmodul
+endmodule
