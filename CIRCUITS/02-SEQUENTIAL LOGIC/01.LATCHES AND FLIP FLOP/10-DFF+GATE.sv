@@ -18,4 +18,3 @@ module d_ff(d,clk,q);
             q<=d;
         end 
 endmodule 
-   
