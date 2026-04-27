@@ -10,7 +10,7 @@ module top_module(
     output aaah,
     output digging ); 
     
-     parameter LEFT=0, RIGHT=1, FALLING_R=2, FALLING_L=3, DIGGING_R=4, DIGGING_L=5, SPLATTER=6;
+     parameter LEFT=0, RIGHT=1,FALLING_R=2,FALLING_L=3, DIGGING_R=4, DIGGING_L=5, SPLATTER=6;
     reg [2:0] state, next_state;
     reg [6:0] count;
     
@@ -18,7 +18,7 @@ module top_module(
         // State transition logic
         case(state)
             LEFT:next_state=(ground)?(dig)?DIGGING_L:(bump_left)?RIGHT:LEFT:FALLING_L;
-            RIGHT:next_state=(ground)?(dig)?DIGGING_R:(bump_right)?LEFT:RIGHT:FALLING_R;
+         RIGHT:next_state=(ground)?(dig)?DIGGING_R:(bump_right)?LEFT:RIGHT:FALLING_R;
             FALLING_R:next_state=(ground)?(count > 7'd19)?SPLATTER:RIGHT:FALLING_R;
             FALLING_L:next_state=(ground)?(count > 7'd19)?SPLATTER:LEFT:FALLING_L;
             DIGGING_R:next_state=(ground)?DIGGING_R:FALLING_R;
@@ -28,9 +28,11 @@ module top_module(
         endcase
     end
 
-    always @(posedge clk, posedge areset) begin
+    always @(posedge clk, posedge areset) 
+        begin
         // State flip-flops with asynchronous reset
-        if(areset) begin
+        if(areset) 
+            begin
             state<=LEFT;
             count<=7'd0;
         end
@@ -44,9 +46,9 @@ module top_module(
         end
     end
     assign walk_left=(state==LEFT);
-    assign walk_right=(state==RIGHT);
-    assign aaah=((state==FALLING_R)|(state==FALLING_L));
-    assign digging=((state==DIGGING_R)|(state==DIGGING_L));
-
+     assign walk_right=(state==RIGHT);
+     assign aaah=((state==FALLING_R)|(state==FALLING_L));
+       assign digging=((state==DIGGING_R)|(state==DIGGING_L));
+ 
 endmodule
 
