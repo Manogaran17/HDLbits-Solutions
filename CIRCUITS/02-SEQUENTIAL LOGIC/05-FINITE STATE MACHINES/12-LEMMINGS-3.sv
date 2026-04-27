@@ -11,7 +11,6 @@ module top_module(
     output digging ); 
      parameter LEFT=0, RIGHT=1, FALLING_R=2, FALLING_L=3, DIGGING_R=4, DIGGING_L=5;
     reg [2:0] state, next_state;
-
     always @(*) begin
         // State transition logic
         case(state)
