@@ -5,7 +5,4 @@ module top_module (
     output Y3
 ); assign Y1=w&y[0];
     assign Y3=~w&(y[1]|y[2]|y[4]|y[5]);
-
-    
-
 endmodule
