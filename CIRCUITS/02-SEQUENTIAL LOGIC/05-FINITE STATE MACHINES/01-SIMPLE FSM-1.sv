@@ -12,7 +12,7 @@ module top_module(
         next_state=state~^in;
     end
 
-    always @(posedge clk, posedge areset) begin    // This is a sequential always block
+    always @(posedge clk, posedge areset) begin 
         // State flip-flops with asynchronous reset
         if(areset)
             state<=B;
