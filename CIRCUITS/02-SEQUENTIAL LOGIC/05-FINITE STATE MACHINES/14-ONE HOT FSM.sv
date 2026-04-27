@@ -7,7 +7,8 @@ module top_module(
     assign out1=state[8]|state[9];
     assign out2=state[7]|state[9];
     
-    always@(*)begin
+    always@(*)
+        begin
         next_state[0]=(~in)&(state[0]|state[1]|state[2]|state[3]|state[4]|state[7]|state[8]|state[9]);
         next_state[1]=in&(state[0]|state[8]|state[9]);
         next_state[2]=in&state[1];
