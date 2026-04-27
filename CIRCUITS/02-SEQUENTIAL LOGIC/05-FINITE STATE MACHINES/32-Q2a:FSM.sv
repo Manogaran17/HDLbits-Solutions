@@ -16,7 +16,7 @@ module top_module (
             default:ns=2'bxx;
         endcase
     end
-    
+
     always@(posedge clk)begin
         if(resetn)
             ps<=ns;
