@@ -34,5 +34,4 @@ module top_module (
     assign f=(ps==B);
     assign g=(ps==E)|(ps==F)|(ps==G);
     
-
 endmodule
