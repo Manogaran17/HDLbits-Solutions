@@ -28,5 +28,4 @@ module top_module (
     
     assign z=(ps==E)|(ps==F);
 
-
 endmodule
