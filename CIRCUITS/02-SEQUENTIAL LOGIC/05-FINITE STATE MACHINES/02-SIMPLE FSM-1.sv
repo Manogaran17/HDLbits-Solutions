@@ -27,6 +27,3 @@ module top_module(clk, reset, in, out);
     assign out=present_state;
 
 endmodule
-
-
-
