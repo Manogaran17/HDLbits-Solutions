@@ -5,14 +5,11 @@ module top_module(
 	output tc
 );
       reg [9:0]counter;
-    
     always@(posedge clk)begin
         if(load)
     		counter<=data;
         else 
             counter<=(counter==0)?0:counter-1;
-    end
-        
+    end 
     assign tc=~|counter;
-
 endmodule
