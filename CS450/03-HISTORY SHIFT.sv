@@ -29,5 +29,4 @@ module top_module(
             predict_history<=predict_history;
         end
     end
-
 endmodule
